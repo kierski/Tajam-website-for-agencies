@@ -1,0 +1,235 @@
+
+.header {
+  width: 100%;
+  height: 100vh;
+  @include mq($sm, 0) {
+    height: $height-header;
+  }
+  @extend %img-backgorund;
+  @include background-url-img(cover_1, jpg);
+
+  & .nav {
+    padding-top: 2em;
+    position: relative;
+    line-height: $logo-height;
+    @include clearfix();
+    &--fixed {
+      @include cover-gradient();
+      border-bottom: 1px solid $color-light-fonts;
+      z-index: 15;
+      position: fixed;
+      top: -.9em;
+      left: 0;
+      right: 0;
+      padding-left: 5em;
+      padding-right: 5em;
+      padding-bottom: 1em;
+      margin-top: -70px;
+      transform: translateY(70px);
+      @include transition(transform  400ms cubic-bezier(#{$cubic-bezier--menu}));
+      li {
+        line-height: 3;
+      }
+    }
+    &__logo {
+      @include color-gradient();
+      margin: 0;
+      float: left;
+      position: relative;
+      z-index: 2;
+      padding-left: 2.6em;
+      line-height: $logo-height;
+      font-size: 2.2em;
+      font-weight: lighter;
+      &:before {
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+        @include background-url-img(sprite, png);
+        width: $logo-width;
+        height: $logo-height;
+        background-position: $logo-offset-x $logo-offset-y;
+      }
+    }
+    &__list {
+      @include mq(0, $md){
+        display: none;
+      }
+      position: relative;
+      z-index: 3;
+      float: right;
+      width: 70%;
+    }
+    &__item {
+      display: block;
+      float: right;
+    }
+    &__link {
+      color: $color-light-fonts;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.1em;
+      padding: 1em;
+      transition: 0.5s;
+      &:hover {
+        @include color-gradient();
+      }
+    }
+
+    /* hamburger menu */
+    &__mobile {
+      @include mq($md, 0) {
+        display: none;
+      }
+      position: absolute;
+      z-index: 4;
+      transform: translateY(-($bar-spacing * 1.5));
+      right: 0;
+      top: $logo-height - ($bar-spacing - ($bar-height * 3));
+      width: $bar-width;
+      height: $bar-spacing * 3 + $bar-height * 3;
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+      &__hamburger {
+        position: absolute;
+        padding: $bar-spacing * 2 0;
+        width: $bar-width;
+      }
+
+      &__bar {
+        width: $bar-width;
+        height: $bar-height;
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        transition: all 0ms 300ms;
+        &::before {
+          content: "";
+          width: $bar-width;
+          height: $bar-height;
+          position: absolute;
+          left: 0;
+          top: $bar-spacing;
+          background: rgba(255, 255, 255, 1);
+          @include transition((top 300ms 300ms cubic-bezier(#{$cubic-bezier}), transform 300ms cubic-bezier(#{$cubic-bezier})));
+
+        }
+        &::after {
+          width: $bar-width;
+          height: $bar-height;
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: $bar-spacing;
+          background: rgba(255, 255, 255, 1);
+          @include transition((bottom 300ms 300ms cubic-bezier(#{$cubic-bezier}), transform 300ms cubic-bezier(#{$cubic-bezier}))); /* dwa nawiasy - przekazujemy zbiór właściwości */
+        }
+        &__animate {
+          background: rgba(255, 255, 255, 0);
+          &::before {
+            top: 0;
+            transform: rotate(45deg);
+              @include transition((top 300ms cubic-bezier(#{$cubic-bezier}), transform 300ms 300ms cubic-bezier(#{$cubic-bezier})));
+          }
+          &::after {
+            bottom: 0;
+          	transform: rotate(-45deg);
+          	  @include transition((bottom 300ms cubic-bezier(#{$cubic-bezier}), transform 300ms 300ms cubic-bezier(#{$cubic-bezier})));
+          }
+        }
+      }
+    }
+
+  }
+
+  & .slider {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    &__slides {
+      text-align: center;
+      color: $color-light-fonts;
+      h2 {
+        font-size: 2.2em;
+        @include line-after-title($accent-color);
+      }
+      p {
+        font-size: 1.5em;
+        line-height: 1.5em;
+        width: 80%;
+        margin: auto;
+      }
+    }
+    &__btn {
+      @extend %btn;
+      margin-top: 2em;
+    }
+  }
+  .pager {
+    position: absolute;
+    top: calc(#{$height-header} - 25em);
+    left: calc(50% - (4 * .8em));
+      &__link {
+        display: inline-block;
+        width: .8em;
+        height: .8em;
+        margin-left: .2em;
+        border-radius: 50%;
+        border: 1px solid $color-light-fonts;
+        position: relative;
+        transition: border 0.2s ease-out;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 100%;
+          background-color: $accent-color;
+          transition: width 0.2s ease-out;
+        }
+        &:hover::before {
+          width: 100%;
+        }
+        &:hover {
+          border-color: $accent-color;
+        }
+      }
+  }
+}
+
+/* modal mobile menu */
+.nav__mobile {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    @include cover-gradient;
+    @include transition(transform 350ms 250ms cubic-bezier(#{$cubic-bezier}));
+    &--visibility {
+      transform: translateX(0);
+    }
+    &--hidden {
+      transform: translateX(-500vh);
+    }
+  }
+  &__list {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    list-style: none;
+    font-size: 2em;
+  }
+  &__item {
+    padding: 0.5em 0;
+    a {
+      color: $color-light-fonts;
+      text-decoration: none;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+
+/* require font face */
+@font-face {
+	src: url('../font/HammersmithOne-Regular.eot');
+	src: local('../font/HammersmithOne Regular'), local('HammersmithOne-Regular'),
+		url('../font/HammersmithOne-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../font/HammersmithOne-Regular.woff2') format('woff2'),
+		url('../font/HammersmithOne-Regular.woff') format('woff'),
+		url('../font/HammersmithOne-Regular.ttf') format('truetype'),
+		url('../font/HammersmithOne-Regular.svg#HammersmithOne-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+  font-size: 10px;
+  color: $color-dark-fonts;
+  font-family: 'HammersmithOne';
+}
+
+/* cover img background */
+%img-backgorund {
+  @include overlay();
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* content */
+.content {
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+
+  @include bp(xs){
+    width: 30em;
+  }
+
+  @include bp(sm){
+    max-width: 50em;
+  }
+
+  @include bp(md){
+    max-width: 75em;
+  }
+
+  @include bp(lg){
+    max-width: 90em;
+  }
+
+  @include bp(xl){
+    max-width: 91em;
+  }
+
+}
+
+/* button */
+%btn {
+  border: 1px solid $accent-color;
+  color: $accent-color;
+  text-decoration: none;
+  border-radius: 4%;
+  padding: 1% 2%;
+  text-transform: uppercase;
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  span {
+    display: block;
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s ease-out;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: $accent-color;
+    transition: height 0.3s ease-out;
+  }
+  &:hover:before {
+    height: 100%;
+  }
+  &:hover span {
+    color: $color-light-fonts;
+  }
+}
+
+/* title */
+.title {
+  margin-top: 7em;
+  margin-bottom: 4em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  h3 {
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  p {
+    margin-top: -1.2em;
+    font-size: 1.2em;
+  }
+  &--dark {
+    color: $color-dark-fonts;
+    p {
+      @include line-after-title($color-dark-fonts, 1.5em);
+    }
+  }
+  &--light {
+    color: $color-light-fonts;
+    p {
+      @include line-after-title($color-light-fonts, 1.5em);
+    }
+  }
+}

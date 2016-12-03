@@ -1,0 +1,102 @@
+
+.video {
+  width: 100%;
+  max-height: 55em;
+  overflow: hidden;
+  @extend %img-backgorund;
+  &__container {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__btn {
+    cursor: pointer;
+    height: 10.5em;
+    width: 10.5em;
+    border: 2px solid $color-light-fonts;
+    position: absolute;
+    top: 50%;
+    left: calc((100% / 2) - (10.5em / 2));
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+    &--active {
+      opacity: 0.6;
+      left: 2em;
+      top: 6em;
+      height: 5.5em;
+      width: 5.5em;
+      .video__btn__info {
+        opacity: 0;
+      }
+    }
+    &__turn {
+      cursor: pointer;
+      width: 3em;
+      height: 3.2em;
+      background: transparent;
+      border: 0;
+      position: absolute;
+      left: calc((10.5em - 3em) / 2);
+      transform: translateY(-50%);
+      top: 50%;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 0 solid transparent;
+        border-width: .8em 0 .8em 1.5em;
+        border-left-color: #eee;
+        width: 0;
+        height: 0;
+        transition: all 0.3s linear;
+      }
+      &::before {
+        height: 16px;
+      }
+      &::after {
+        left: 1.5em;
+        top: .8em;
+      }
+      &--active {
+        left: calc((5.5em - 2.5em) / 2);
+        &::before,
+        &::after {
+          border-width: 0 0 0 .7em;
+          height: 3em;
+          opacity: 0.6;
+        }
+        &::after {
+          left: 1.8em;
+          top: 0;
+        }
+      }
+      &:focus {
+        outline: 0;
+      }
+    }
+    &__info {
+      color: $color-light-fonts;
+      position: absolute;
+      bottom: -4em;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1em;
+      font-weight: bold;
+    }
+  }
+
+}

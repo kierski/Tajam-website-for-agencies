@@ -1,0 +1,37 @@
+
+.story {
+  background-color: $color-light-fonts;
+  padding: 6.5em 0;
+  @include clearfix;
+  &__content__img {
+    @include mq($lg, 0) {
+      float: left;
+      display: block;
+    }
+    display: none;
+    @include background-url-img(sprite, png);
+    width: $img-1-width;
+    height: $img-1-height;
+    background-position: $img-1-offset-x $img-1-offset-y;
+  }
+  &__content__intro {
+    @include mq($lg, 0) {
+      width: 60%;
+    }
+    width: 100%;
+    float: right;
+    font-size: 1.5em;
+    h3 {
+      margin: 0;
+      text-transform: uppercase;
+    }
+    p {
+      width: 100%;
+      line-height: 1.5em;
+    }
+  }
+  &__btn {
+    @extend %btn;
+    margin-top: .5em;
+  }
+}

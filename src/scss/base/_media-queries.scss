@@ -1,0 +1,88 @@
+
+$xs: 320px; /* =<543px */
+$sm: 544px; /* =<767px and >=544px */
+$md: 768px; /* <=991px and >=768px */
+$lg: 992px; /* =<1999px and >=992px */
+$xl: 1200px; /* >=1200px */
+
+/* breakpoint */
+@mixin bp($bp) {
+
+    @if $bp == xs {
+      @media screen and (max-width: #{$sm} - 1) {
+        @content;
+      }
+    }
+
+    @else if $bp == sm {
+      @media screen and (max-width: #{$md} - 1) and (min-width: #{$sm}) {
+        @content;
+      }
+    }
+
+    @else if $bp == md {
+      @media screen and (max-width: #{$lg} - 1) and (min-width: #{$md}) {
+        @content;
+      }
+    }
+
+    @else if $bp == lg {
+      @media screen and (max-width: #{$xl} - 1) and (min-width: #{$lg}) {
+        @content;
+      }
+    }
+
+    @else if $bp == xl {
+      @media screen and (min-width: #{$xl}) {
+        @content;
+      }
+    }
+
+    @else {
+      @warn "Breakpoint supports: xs, sm, md, lg, xl";
+    }
+
+}
+
+/* min/max-width */
+@mixin mq($min, $max) {
+  $query: "all";
+  @if $min != 0 and $max != 0 {
+    $query: "(min-width: #{$min}) and (max-width: #{$max})";
+  }
+  @else if $min != 0 and $max == 0 {
+    $query: "(min-width: #{$min})";
+  }
+  @else if $min == 0 and $max != 0 {
+    $query: "(max-width: #{$max})";
+  }
+  @media #{$query} {
+    @content;
+  }
+}
+
+/* test */
+/*  body {
+
+ @include bp(xs){
+   background: blue;
+ }
+
+ @include bp(sm){
+   background: green;
+ }
+
+ @include bp(md){
+   background: aqua;
+ }
+
+ @include bp(lg){
+   background: red;
+ }
+
+ @include bp(xl){
+   background: yellow;
+ }
+
+}
+*/

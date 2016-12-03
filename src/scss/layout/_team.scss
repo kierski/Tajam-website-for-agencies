@@ -1,0 +1,60 @@
+
+.team {
+  .title {
+    padding: 4em 0 1em 0;
+  }
+  width: 100%;
+  position: relative;
+  @extend %img-backgorund;
+  @include background-url-img('cover_3', 'jpg');
+  &__person {
+    position: relative;
+    z-index: 2;
+    @include clearfix;
+    &__content {
+      border: 1px solid $color-light-fonts;
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+      @include mq($md, 0) {
+        float: left;
+        margin-left: .9em;
+      }
+      @include bp(md) {
+        width: calc(70em / 4);
+      }
+      @include mq($lg, 0){
+        width: calc(80em / 4);
+        margin-left: 2em;
+      }
+      img {
+        @include mq(0, $md) {
+          border-radius: 50%;
+        }
+      }
+    }
+    &__desc {
+      h4 {
+        color: $color-light-fonts;
+        span {
+          display: block;
+          padding-bottom: .8em;
+        }
+      }
+    }
+  }
+  &__bottom_info {
+    position: relative;
+    z-index: 2;
+    padding: 5em 0;
+    text-align: center;
+    color: $color-light-fonts;
+    h4 {
+      font-size: 1.1em;
+    }
+  }
+  &__btn {
+    @extend %btn;
+  }
+}

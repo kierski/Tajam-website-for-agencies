@@ -1,0 +1,68 @@
+
+/* cover gradeint */
+@mixin cover-gradient($color-start: #09052f, $color-stops: #311d5e) {
+  background: $color-start; /* Old browsers */
+  background: linear-gradient(to right,  $color-start 1%,$color-stops 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* font gradient */
+@mixin color-gradient( $color-first: rgba(0,224,209,1), $color-second: rgba(74,163,204,1) ) {
+  color: $color-first;
+  background: -moz-linear-gradient(left, $color-first 0%, $color-second 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, $color-first), color-stop(100%, $color-second));
+  background: linear-gradient(to right, $color-first 0%, $color-second 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* backgorund url imgs */
+@mixin background-url-img($file-name, $file-extension) {
+  background-image: url(../images/#{$file-name}.#{$file-extension});
+}
+
+/* transition */
+@mixin transition($transition) {
+  transition: $transition;
+}
+
+ /* overlay */
+@mixin overlay() {
+  &:after {
+    z-index: 1;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;;
+    top: 0;
+    bottom: 0;
+    opacity: 0.8;
+    @include cover-gradient();
+  }
+}
+
+/* line after title */
+@mixin line-after-title($color, $mtop: 0.8em, $size: 5%) {
+  &:after {
+    content: "";
+    display: block;
+    margin: auto;
+    margin-top: $mtop;
+    width: $size;
+    height: 1px;
+    background-color: $color;
+  }
+}
+
+/* clearfix */
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
