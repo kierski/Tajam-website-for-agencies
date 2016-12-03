@@ -12,7 +12,6 @@
     z-index: 2;
     @include clearfix;
     &__content {
-      border: 1px solid $color-light-fonts;
       width: 100%;
       text-align: center;
       overflow: hidden;
@@ -20,6 +19,7 @@
       @include mq($md, 0) {
         float: left;
         margin-left: .9em;
+        border: 1px solid $color-light-fonts;
       }
       @include bp(md) {
         width: calc(70em / 4);
@@ -37,7 +37,10 @@
     &__desc {
       h4 {
         color: $color-light-fonts;
+        font-family: 'LatoWebThin';
         span {
+          font-family: 'LatoWebMedium';
+          letter-spacing: 0.1em;
           display: block;
           padding-bottom: .8em;
         }

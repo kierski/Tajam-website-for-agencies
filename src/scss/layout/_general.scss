@@ -1,17 +1,4 @@
 
-/* require font face */
-@font-face {
-	src: url('../font/HammersmithOne-Regular.eot');
-	src: local('../font/HammersmithOne Regular'), local('HammersmithOne-Regular'),
-		url('../font/HammersmithOne-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../font/HammersmithOne-Regular.woff2') format('woff2'),
-		url('../font/HammersmithOne-Regular.woff') format('woff'),
-		url('../font/HammersmithOne-Regular.ttf') format('truetype'),
-		url('../font/HammersmithOne-Regular.svg#HammersmithOne-Regular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
 body {
   font-size: 10px;
   color: $color-dark-fonts;

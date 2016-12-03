@@ -1,7 +1,7 @@
 
 # TODO
-  * [ ] hover img team :fire:
-  * [ ] include lato fonts
-  * [ ] mobile style for team section
   * [ ] color fonts from Photoshop
-  * [ ] problem with button in team section
+  * [ ] color border to expertise from Photoshop
+
+#### mobile
+  * [ ] mobile style for team section
