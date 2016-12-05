@@ -95,7 +95,7 @@ body {
   &--dark {
     color: $color-dark-fonts;
     p {
-      @include line-after-title($color-dark-fonts, 1.5em);
+      @include line-after-title(#ebebeb, 1.5em);
     }
   }
   &--light {

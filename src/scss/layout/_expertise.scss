@@ -8,15 +8,15 @@
   &__item {
     @include mq($md, 0){
       &:nth-child(-n+3) {
-        border-bottom: 1px solid $color-dark-fonts;
+        border-bottom: 1px solid #ebebeb;
       }
       &:nth-child(2) {
-        border-right: 1px solid $color-dark-fonts;
-        border-left: 1px solid $color-dark-fonts;
+        border-right: 1px solid #ebebeb;
+        border-left: 1px solid #ebebeb;
       }
       &:nth-last-child(2) {
-        border-right: 1px solid $color-dark-fonts;
-        border-left: 1px solid $color-dark-fonts;
+        border-right: 1px solid #ebebeb;
+        border-left: 1px solid #ebebeb;
       }
     }
     width: 100%;

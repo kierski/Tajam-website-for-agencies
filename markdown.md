@@ -44,8 +44,8 @@ Without syntax `var x = 100`
 #### IMG
 ![img](src/images/cover_1.jpg)
 
-#### links
-[img](http:google.pl)
+##### links
+[unsplash](https://unsplash.com/)
 
 ---
 

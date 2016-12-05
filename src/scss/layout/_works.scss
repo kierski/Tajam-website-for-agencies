@@ -1,0 +1,91 @@
+
+.works {
+  &__top_info {
+    padding-top: 5em;
+    padding-bottom: 9em;
+    &-title {
+      font-family: 'LatoWebBold';
+      font-size: 3em;
+      position: absolute;
+      left: 0;
+    }
+    &-link {
+      position: absolute;
+      right: 0;
+      top: 6.5em;
+      a {
+        color: $color-dark-fonts;
+        text-decoration: none;
+      }
+      &::after {
+        content: ">";
+        right: -1em;
+        display: inline-block;
+        position: absolute;
+      }
+    }
+  }
+  &__projects {
+    @include clearfix;
+    width: 100%;
+    overflow: hidden;
+    &_item {
+    width: calc(100% / 2);
+    @include mq($sm, 0) {
+      width: calc(100% / 3);
+    }
+    @include mq($md, 0) {
+      width: calc(100% / 4);
+    }
+    @include mq($lg, 0){
+      width: calc(100%/6);
+    }
+    height: 200px;
+    float: left;
+    background-size: cover;
+    background-position: center;
+    }
+  }
+  &__bottom_info {
+    position: relative;
+    text-align: center;
+  }
+  &__btn {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    border: 1px solid $accent-color;
+    color: $accent-color;
+    text-decoration: none;
+    border-radius: 4%;
+    padding: 1% 2%;
+    text-transform: uppercase;
+    font-size: 1em;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    &--animation {
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        bottom: calc(50% - .5em);
+        width: 1em;
+        height: 1em;
+        border-radius: 100%;
+        background-color: $accent-color;
+        animation : load 2.5s cubic-bezier(.88,.27,.1,.76) infinite;
+      }
+      span {
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+/* load animation */
+@keyframes load {
+    0% {left : 0%;}
+    50% {left : 90%;}
+    100% {left : 0%;}
+}
