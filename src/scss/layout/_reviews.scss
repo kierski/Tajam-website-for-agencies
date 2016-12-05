@@ -1,0 +1,105 @@
+
+.reviews {
+  margin-bottom: 20em;
+
+  height: 40.15em;
+  @extend %img-backgorund;
+  @include background-url-img(cover_4, jpg);
+  .slider {
+    position: absolute;
+    top: 31%;
+    z-index: 2;
+    color: white;
+    &__slides {
+
+    }
+    &__slide {
+      p {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        span {
+          &.quotation_marks {
+            font-size: 10em;
+            position: absolute;
+            top: -.35em;
+            left: 48%;
+          }
+          &.signature {
+            display: block;
+            margin-top: 2em;
+            b {
+              font-family: 'LatoWebHeavy';
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    & .pager {
+      position: relative;
+      top: 3em;
+      width: 50%;
+      margin: 0 auto;
+      a {
+        position: relative;
+        display: inline-block;
+        border-radius: 100%;
+        width: 5em;
+        height: 5em;
+        overflow: hidden;
+        @include transition(transform  400ms cubic-bezier(#{$cubic-bezier--menu}));
+        &.pager__link-active {
+          transform: scale(1.3);
+        }
+        img {
+          width: 5em;
+          height: 5em;
+        }
+      }
+      & .pager__link-right {
+        cursor: pointer;
+        content: attr(data-right);
+        display: block;
+        position: absolute;
+        right: 3.7em;
+        top: 2.5em;
+        border-right: .2em solid;
+        border-bottom: .2em solid;
+        width: 1.5em;
+        height: 1.5em;
+        transform: rotate(-45deg);
+      }
+      & .pager__link-left {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        left: 3em;
+        top: 2.5em;
+        border-right: .2em solid;
+        border-bottom: .2em solid;
+        width: 1.5em;
+        height: 1.5em;
+        transform: rotate(140deg);
+      }
+      &__people {
+        height: 7.4em;
+        overflow: hidden;
+        width: 78%;
+        margin: 0 auto;
+        padding-top: 1em;
+      }
+      /* increment style for pagers in reviews */
+      $max: 10;
+      @for $i from 1 through $max {
+          $value: $i * 15;
+          .pager__link:nth-child(#{$i}){
+            left: #{$value}px;
+          }
+      }
+    }
+  }
+}
