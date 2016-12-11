@@ -1,7 +1,5 @@
 
 .reviews {
-  margin-bottom: 20em;
-
   height: 40.15em;
   @extend %img-backgorund;
   @include background-url-img(cover_4, jpg);
@@ -93,8 +91,8 @@
         padding-top: 1em;
       }
       /* increment style for pagers in reviews */
-      $max: 10;
-      @for $i from 1 through $max {
+      $rev: 5;
+      @for $i from 1 through $rev {
           $value: $i * 15;
           .pager__link:nth-child(#{$i}){
             left: #{$value}px;

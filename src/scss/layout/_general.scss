@@ -5,6 +5,12 @@ body {
   font-family: 'HammersmithOne';
 }
 
+/* none outline */
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
 /* cover img background */
 %img-backgorund {
   @include overlay();
