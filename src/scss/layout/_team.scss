@@ -16,7 +16,12 @@
       text-align: center;
       overflow: hidden;
       position: relative;
+      margin-bottom: 2em;
+      &:last-child {
+        margin-bottom: 0;
+      }
       @include mq($md, 0) {
+        margin-bottom: 0;
         float: left;
         margin-left: .9em;
         border: 1px solid $color-light-fonts;
@@ -48,9 +53,13 @@
     }
   }
   &__bottom_info {
+    @include mq($md, 0) {
+      padding: 5em 0;
+    }
+    padding-bottom: 2em;
+    padding-top: 2em;
     position: relative;
     z-index: 2;
-    padding: 5em 0;
     text-align: center;
     color: $color-light-fonts;
     h4 {

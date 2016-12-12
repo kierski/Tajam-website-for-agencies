@@ -89,6 +89,10 @@
       }
     }
     &__info {
+      display: none;
+      @include mq($md, 0) {
+        display: block;
+      }
       color: $color-light-fonts;
       position: absolute;
       bottom: -4em;

@@ -11,11 +11,14 @@
     @include clearfix;
   }
   &__col {
+    width: 100%;
+    @include mq($md, 0) {
+      width: calc(100%/3);
+    }
+    float: left;
     position: relative;
     z-index: 2;
     color: $color-light-fonts;
-    width: calc(100%/3);
-    float: left;
     h4 {
       letter-spacing: .1em;
       text-transform: uppercase;
@@ -186,7 +189,9 @@
       z-index: 2;
       color: $color-light-fonts;
       &-1 {
-        float: left;
+        @include mq($md, 0) {
+          float: left;
+        }
         ul {
           margin: 0;
           padding: 0;
@@ -201,9 +206,11 @@
         }
       }
       &-2 {
-        float: right;
-        bottom: 1.5em;
-        right: 5.5em;
+        @include mq($md, 0) {
+          float: right;
+          bottom: 1.5em;
+          right: 5.5em;
+        }
       }
     }
   }

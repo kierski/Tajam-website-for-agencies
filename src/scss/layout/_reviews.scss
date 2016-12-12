@@ -1,5 +1,9 @@
 
 .reviews {
+  display: none;
+  @include mq($lg, 0) {
+    display: block;
+  }
   height: 40.15em;
   @extend %img-backgorund;
   @include background-url-img(cover_4, jpg);
@@ -8,9 +12,6 @@
     top: 31%;
     z-index: 2;
     color: white;
-    &__slides {
-
-    }
     &__slide {
       p {
         font-family: 'Playfair Display', serif;
