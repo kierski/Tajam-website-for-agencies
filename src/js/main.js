@@ -2,6 +2,7 @@
 //=require bower/jquery/dist/jquery.min.js
 
 //=require modules/menu.js
+//=require modules/slider_header.js
 //=require modules/video.js
 //=require modules/portfolio.js
 //=require modules/reviews.js
@@ -9,9 +10,12 @@
 window.onload = function() {
 
   // menu
-  // mobileMenu();
-  // scrollNav();
-  // scrollToSection();
+  mobileMenu();
+  scrollNav();
+  scrollToSection();
+
+  // header slider
+  headerSlider();
 
   // video
   video();

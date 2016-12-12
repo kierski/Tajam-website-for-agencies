@@ -115,7 +115,7 @@ function pagerImg(that) {
 }
 
   // init slide
-  var slide = {
+  var slideReviews = {
     init: function() {
       // move right
       $(arrow.right).on('click', function(e){
@@ -135,6 +135,6 @@ function pagerImg(that) {
     }
   };
 
-  slide.init();
+  slideReviews.init();
 
 };

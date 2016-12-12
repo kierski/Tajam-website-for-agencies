@@ -129,11 +129,21 @@
 
   }
 
-  & .slider {
+  &__slider {
     position: absolute;
     z-index: 2;
     top: 50%;
     transform: translateY(-50%);
+    &__slide {
+
+      opacity: 0;
+      display: none;
+      &-active {
+
+        display: block;
+        opacity: 1;
+      }
+    }
     &__slides {
       text-align: center;
       color: $color-light-fonts;
@@ -153,7 +163,7 @@
       margin-top: 2em;
     }
   }
-  .pager {
+  &__pager {
     position: absolute;
     top: calc(#{$height-header} - 25em);
     left: calc(50% - (4 * .8em));

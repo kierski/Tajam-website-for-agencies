@@ -146,6 +146,7 @@ var mobileMenu = function() {
       mobile__item.appendChild(link);
       nav__mobile__list.appendChild(mobile__item);
     });
+
   }
 
 };
