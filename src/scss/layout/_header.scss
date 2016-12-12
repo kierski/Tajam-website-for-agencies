@@ -32,25 +32,11 @@
       }
     }
     &__logo {
-      @include color-gradient();
+      @extend %logo;
       margin: 0;
       float: left;
       position: relative;
       z-index: 2;
-      padding-left: 2.6em;
-      line-height: $logo-height;
-      font-size: 2.2em;
-      font-weight: lighter;
-      &:before {
-        content: "";
-        display: block;
-        left: 0;
-        position: absolute;
-        @include background-url-img(sprite, png);
-        width: $logo-width;
-        height: $logo-height;
-        background-position: $logo-offset-x $logo-offset-y;
-      }
     }
     &__list {
       @include mq(0, $md){

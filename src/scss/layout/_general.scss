@@ -11,6 +11,25 @@ textarea:focus, input:focus{
     outline: none;
 }
 
+/* logo */
+%logo {
+  @include color-gradient();
+  padding-left: 2.6em;
+  line-height: $logo-height;
+  font-size: 2.2em;
+  font-weight: lighter;
+  &:before {
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    @include background-url-img(sprite, png);
+    width: $logo-width;
+    height: $logo-height;
+    background-position: $logo-offset-x $logo-offset-y;
+  }
+}
+
 /* cover img background */
 %img-backgorund {
   @include overlay();
