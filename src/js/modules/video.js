@@ -1,7 +1,5 @@
 
 var video = function() {
-  // todo
-    // chciałbym aby to był obiekt, w którym podajemy nazwę pliku oraz rozszerzenie, a następnie nam to iteruję po tablicy po to aby wstawić wszystkie potrzebne formaty dla przeglądarek
 
   var videoContent = document.querySelector('.video__content');
   var btn = document.querySelector('.video__btn');

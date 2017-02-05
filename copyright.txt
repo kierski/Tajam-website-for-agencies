@@ -1,7 +1,0 @@
-
-Video: https://www.youtube.com/user/VideoBlockscom/featured
-
-Articles:
-	- https://www.sitepoint.com/sass-basics-operators/
-  -http://andy-carter.com/blog/a-beginners-guide-to-package-manager-bower-and-using-gulp-to-manage-components
-  -http://www.webpagefx.com/tools/emoji-cheat-sheet/

@@ -109,9 +109,9 @@ gulp.task('img', function() {
 // upload to ftp
 gulp.task('upload', function() {
     var conn = ftp.create({
-        host: 's8.mydevil.net',
-        user: 'f1372_andrzej',
-        password: 'Andrzej11151'
+        host: '****',
+        user: '****',
+        password: '****'
     });
     return gulp.src('dist/**/*').pipe(conn.dest('/public_html/'));
 });

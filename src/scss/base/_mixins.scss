@@ -2,7 +2,7 @@
 /* cover gradeint */
 @mixin cover-gradient($color-start: #09052f, $color-stops: #311d5e) {
   background: $color-start; /* Old browsers */
-  background: linear-gradient(to right,  $color-start 1%,$color-stops 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to right,  $color-start 1%,$color-stops 100%);  
 }
 
 /* font gradient */
